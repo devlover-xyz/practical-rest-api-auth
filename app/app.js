@@ -103,7 +103,8 @@ var menuView = {
     }, */
     data: [
         { id: "products", value: "Products", icon: "mdi mdi-shopping" },
-        { id: "transactions", value: "Transactions", icon: "mdi mdi-cart" },
+        { id: "productedit", value: "Products Edit", icon: "mdi mdi-shopping-search" },
+        { id: "orders", value: "Orders", icon: "mdi mdi-cart" },
         { id: "customers", value: "Customers", icon: "mdi mdi-account-box" },
         { id: "payhistoryview", value: "Payment History", icon: "mdi mdi-chart-areaspline" },
         { id: "widgets", value: "Widgets", icon: "mdi mdi-widgets" },

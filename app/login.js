@@ -9,7 +9,7 @@ function showLoginForm() {
             labelWidth: 120
         },
         elements: [
-            { "template": "<span class='webix_icon fa-user-circle-o'></span>Login", type: "header" },
+            { "template": "<span class='mdi mdi-login-variant'></span>Login", type: "header" },
             {
                 view: "text", label: "Email", name: "email", id: "email", value: "aviq.baihaqy@gmail.com",
                 required: true, validate: webix.rules.isEmail, invalidMessage: "Please enter a valid email!",

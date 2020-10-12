@@ -50,7 +50,7 @@ const controls = [
             grid.clearAll();
             grid.showProgress();
             webix.delay(function () {
-                grid.parse(data);
+                grid.parse(productsData);
                 grid.hideProgress();
             }, null, null, 300);
 
