@@ -1,9 +1,11 @@
 <?php
+// required headers
 header("Access-Control-Allow-Origin: http://sales.local");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 
 require "../vendor/autoload.php";
 include_once './config/core.php';
@@ -14,8 +16,6 @@ use \Firebase\JWT\JWT;
 $jwt = null;
 $databaseService = new DatabaseService();
 $conn = $databaseService->getConnection();
-
-$data = json_decode(file_get_contents("php://input"));
 
 $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
 
@@ -29,11 +29,9 @@ if($jwt){
 
         $decoded = JWT::decode($jwt, $secret_key, array('HS256'));
 
-        // Access is granted. Add code of the operation here 
-
         echo json_encode(array(
             "message" => "Access granted:",
-            "error" => false
+            "data" => $decoded->data
         ));
 
     }catch (Exception $e){
